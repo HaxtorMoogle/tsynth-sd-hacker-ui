@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TSYNTH // SD-HACKER DASH v4.1</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body class="crt min-h-screen p-4">
+    <div class="scanline"></div>
+    
+    <div class="max-w-7xl mx-auto">
+        <!-- NAV -->
+        <nav class="flex justify-between items-center border-b border-[#00ff9f]/50 pb-4 mb-6">
+            <div class="flex items-center gap-4">
+                <div class="w-12 h-12 bg-[#00ff9f] text-black flex items-center justify-center text-2xl font-bold border-4 border-black rotate-12">TS</div>
+                <div>
+                    <h1 class="text-4xl tracking-widest glitch">TSYNTH // SD-HACK v4.1</h1>
+                    <p class="text-xs text-[#ff00aa] tracking-[4px]">TEENSY 4.1 POWERED NEURAL SYNTH</p>
+                </div>
+            </div>
+            <div class="flex gap-6 text-sm">
+                <a href="#" onclick="navigate('main')" class="nav-link active">DASH</a>
+                <a href="#" onclick="navigate('library')" class="nav-link">LIBRARY</a>
+                <a href="#" onclick="navigate('training')" class="nav-link">TRAINING</a>
+                <a href="#" onclick="navigate('patch')" class="nav-link">PATCH EDITOR</a>
+            </div>
+        </nav>
+
+        <!-- MAIN CONTENT CONTAINER -->
+        <div id="content">
+            <!-- DASHBOARD will be loaded by JS -->
+        </div>
+    </div>
+
+    <footer class="fixed bottom-0 left-0 right-0 text-center text-[10px] py-2 border-t border-[#00ff9f]/30 bg-black/80">
+        ELECTROTECHNIQUE TSYNTH-UI // HACK THE SYNTH // CONNECTED TO TEENSY 4.1
+    </footer>
+
+    <script src="main.js"></script>
+</body>
+</html>

@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
+
+:root {
+    --neon-green: #00ff9f;
+    --neon-pink: #ff00aa;
+    --bg-dark: #0a0a0a;
+}
+
+body {
+    font-family: 'VT323', monospace;
+    background: linear-gradient(180deg, #0a0a0a 0%, #1a001a 100%);
+    color: var(--neon-green);
+    overflow-x: hidden;
+}
+
+.scanline {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(transparent 50%, rgba(0, 255, 159, 0.05) 50%);
+    background-size: 100% 4px;
+    pointer-events: none;
+    animation: scan 4s linear infinite;
+    z-index: 9999;
+    opacity: 0.3;
+}
+
+@keyframes scan {
+    0% { transform: translateY(-100%); }
+    100% { transform: translateY(100%); }
+}
+
+.crt { filter: contrast(1.2) brightness(1.1); }
+
+.knob {
+    width: 80px; height: 80px;
+    background: radial-gradient(circle at 30% 30%, #333, #111);
+    border: 4px solid var(--neon-green);
+    border-radius: 50%;
+    position: relative;
+    box-shadow: 0 0 20px var(--neon-green);
+    cursor: pointer;
+    transition: transform 0.1s;
+}
+
+.terminal {
+    background: #000;
+    border: 2px solid var(--neon-green);
+    box-shadow: 0 0 15px var(--neon-green);
+}
+
+.glitch {
+    animation: glitch 0.3s infinite;
+}
+
+@keyframes glitch {
+    0% { transform: translate(0); }
+    20% { transform: translate(-2px, 2px); }
+    40% { transform: translate(-2px, -2px); }
+    60% { transform: translate(2px, 2px); }
+    80% { transform: translate(2px, -2px); }
+    100% { transform: translate(0); }
+}
+
+.nav-link {
+    color: var(--neon-green);
+    text-decoration: none;
+    padding: 0.5rem 1rem;
+    border-bottom: 2px solid transparent;
+}
+
+.nav-link.active {
+    border-bottom: 2px solid var(--neon-pink);
+    color: var(--neon-pink);
+}
+
+/* Additional styles for pages */
+#canvas {
+    background: #000;
+    position: relative;
+    overflow: hidden;
+}
